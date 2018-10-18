@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using InControl;
 
 //#if UNITY_EDITOR
@@ -42,7 +43,6 @@ namespace InControl
 
 			TestInputMappings();
 
-//			Debug.Log( "Unity Version: " + InputManager.UnityVersion );
 		}
 
 
@@ -69,9 +69,10 @@ namespace InControl
 				CheckForPauseButton();
 			}
 
+            // reload the test input manager scene
 			if (Input.GetKeyDown( KeyCode.R ))
 			{
-				Application.LoadLevel( "TestInputManager" );
+				SceneManager.LoadScene( "TestInputManager" );
 			}
 		}
 
